@@ -54,7 +54,6 @@ public class UserAuthenticationProvider {
         User user = userRepository
                 .findByUsername(email)
                 .orElseThrow(UserNotFoundException::new);
-//        GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_" + user.getRole().getName());
 
         return new UsernamePasswordAuthenticationToken(user, null,null);
     }
